@@ -37,18 +37,13 @@ public class Hufflepuff extends Hogwarts{
         this.honesty = honesty;
     }
 
-    public static void compareAllStudents(Hufflepuff[] hufflepuffs) {
-        int sum = 0;
-        int sum1 = 0;
-        int number = 0;
-        for(int i = 0; i < hufflepuffs.length; i++){
-            Hufflepuff hufflepuff = hufflepuffs[i];
-            sum1 = hufflepuff.getDiligence() + hufflepuff.getLoyalty() + hufflepuff.getHonesty();
-            if(sum < sum1){
-                sum = sum1;
-                number = i;
-            }
-        }
-        System.out.println(hufflepuffs[number].getStudent() + " лучший студент на факультете Пуффендуй");
+    @Override
+    public String toString() {
+        return "Hufflepuff{" + "student=" + getStudent() + ", magicPower=" + getMagicPower() +
+                ", transgressionDistance=" + getTransgressionDistance() +
+                ", diligence=" + diligence +
+                ", loyalty=" + loyalty +
+                ", honesty=" + honesty +
+                "}";
     }
 }

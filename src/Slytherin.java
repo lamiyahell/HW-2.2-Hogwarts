@@ -58,19 +58,15 @@ public class Slytherin extends Hogwarts{
         this.lustForPower = lustForPower;
     }
 
-    public static void compareAllStudents(Slytherin[] slytherins) {
-        int sum = 0;
-        int sum1 = 0;
-        int number = 0;
-        for(int i = 0; i < slytherins.length; i++){
-            Slytherin slytherin = slytherins[i];
-            sum1 = slytherin.getCunning() + slytherin.getDetermination() + slytherin.getAmbition()
-                    + slytherin.getResourcefulness() + slytherin.getLustForPower();
-            if(sum < sum1){
-                sum = sum1;
-                number = i;
-            }
-        }
-        System.out.println(slytherins[number].getStudent() + " лучший студент на факультете Слизерин");
+    @Override
+    public String toString() {
+        return "Slytherin{" + "student=" + getStudent() + ", magicPower=" + getMagicPower() +
+                ", transgressionDistance=" + getTransgressionDistance() +
+                ", cunning=" + cunning +
+                ", determination=" + determination +
+                ", ambition=" + ambition +
+                ", resourcefulness=" + resourcefulness +
+                ", lustForPower=" + lustForPower +
+                "}";
     }
 }

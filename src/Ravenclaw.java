@@ -47,19 +47,14 @@ public class Ravenclaw extends Hogwarts{
         this.creativity = creativity;
     }
 
-    public static void compareAllStudents(Ravenclaw[] ravenclaws) {
-        int sum = 0;
-        int sum1 = 0;
-        int number = 0;
-        for(int i = 0; i < ravenclaws.length; i++){
-            Ravenclaw ravenclaw = ravenclaws[i];
-            sum1 = ravenclaw.getIntelligence() + ravenclaw.getWisdom()
-                    + ravenclaw.getWit() + ravenclaw.getCreativity();
-            if(sum < sum1){
-                sum = sum1;
-                number = i;
-            }
-        }
-        System.out.println(ravenclaws[number].getStudent() + " лучший студент на факультете Когтевран");
+    @Override
+    public String toString() {
+        return "Ravenclaw{" + "student=" + getStudent() + ", magicPower=" + getMagicPower() +
+                ", transgressionDistance=" + getTransgressionDistance() +
+                ", intelligence=" + intelligence +
+                ", wisdom=" + wisdom +
+                ", wit=" + wit +
+                ", creativity=" + creativity +
+                "}";
     }
 }

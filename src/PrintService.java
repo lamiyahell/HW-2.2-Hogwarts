@@ -1,49 +1,76 @@
 public class PrintService {
 
-    public void print(Gryffindor[] gryffindors) {
-        System.out.println("Грифиндор: " + gryffindors.length);
-        for (int i = 0; i < gryffindors.length; i++) {
-            Gryffindor gryffindor = gryffindors[i];
-            System.out.println("Студент " + gryffindor.getStudent() + ", Сила магии: " + gryffindor.getMagicPower()
-                    + ", Расстояние трангрессии: " + gryffindor.getTransgressionDistance()
-                    + ", Благодародство: " + gryffindor.getNobility() + ", Честь: "
-                    + gryffindor.getHonor() + ", Храбрость: " + gryffindor.getCourage());
+    public void compareGryffindor(Gryffindor first, Gryffindor second) {
+        int firstSum = first.getCourage() + first.getHonor() + first.getNobility();
+        int secondSum = second.getCourage() + second.getHonor() + second.getNobility();
+
+        if (firstSum > secondSum) {
+            System.out.println(first.getStudent() + " лучший Гриффиндорец, чем " + second.getStudent());
+        } else if (secondSum > firstSum) {
+            System.out.println(second.getStudent() + " лучший Гриффиндорец, чем " + first.getStudent());
+        } else {
+            System.out.println(second.getStudent() + " равен " + first.getStudent());
         }
     }
 
-    public void print(Hufflepuff[] hufflepuffs) {
-        System.out.println("Пуффендуй: " + hufflepuffs.length);
-        for (int i = 0; i < hufflepuffs.length; i++) {
-            Hufflepuff hufflepuff = hufflepuffs[i];
-            System.out.println("Студент " + hufflepuff.getStudent() + ", Сила магии: " + hufflepuff.getMagicPower()
-                    + ", Расстояние трангрессии: " + hufflepuff.getTransgressionDistance()
-                    + ", Трудолюбие: " + hufflepuff.getDiligence() + ", Верность: "
-                    + hufflepuff.getLoyalty() + ", Честность: " + hufflepuff.getHonesty());
+    public void compareHufflepuff(Hufflepuff first, Hufflepuff second) {
+        int firstSum = first.getDiligence() + first.getHonesty() + first.getLoyalty();
+        int secondSum = second.getDiligence() + second.getHonesty() + second.getLoyalty();
+
+        if (firstSum > secondSum) {
+            System.out.println(first.getStudent() + " лучший Пуффендуец, чем " + second.getStudent());
+        } else if (secondSum > firstSum) {
+            System.out.println(second.getStudent() + " лучший Пуффендуец, чем " + first.getStudent());
+        } else {
+            System.out.println(second.getStudent() + " равен " + first.getStudent());
         }
     }
 
-    public void print(Ravenclaw[] ravenclaws) {
-        System.out.println("Когтевран: " + ravenclaws.length);
-        for (int i = 0; i < ravenclaws.length; i++) {
-            Ravenclaw ravenclaw = ravenclaws[i];
-            System.out.println("Студент " + ravenclaw.getStudent() + ", Сила магии: " + ravenclaw.getMagicPower()
-                    + ", Расстояние трангрессии: " + ravenclaw.getTransgressionDistance()
-                    + ", Ум: " + ravenclaw.getIntelligence() + ", Мудрость: "
-                    + ravenclaw.getWisdom() + ", Остроумие: " + ravenclaw.getWit()
-                    + ", Творчество: " + ravenclaw.getCreativity());
+    public void compareRavenclaw(Ravenclaw first, Ravenclaw second) {
+        int firstSum = first.getCreativity() + first.getWit() + first.getWisdom() + first.getIntelligence();
+        int secondSum = second.getCreativity() + second.getWit() + second.getWisdom() + second.getIntelligence();
+
+        if (firstSum > secondSum) {
+            System.out.println(first.getStudent() + " лучший Когтевранец, чем " + second.getStudent());
+        } else if (secondSum > firstSum) {
+            System.out.println(second.getStudent() + " лучший Когтевранец, чем " + first.getStudent());
+        } else {
+            System.out.println(second.getStudent() + " равен " + first.getStudent());
         }
     }
 
-    public void print(Slytherin[] slytherins) {
-        System.out.println("Слизерин: " + slytherins.length);
-        for (int i = 0; i < slytherins.length; i++) {
-            Slytherin slytherin = slytherins[i];
-            System.out.println("Студент " + slytherin.getStudent() + ", Сила магии: " + slytherin.getMagicPower()
-                    + ", Расстояние трангрессии: " + slytherin.getTransgressionDistance()
-                    + ", Хитрость: " + slytherin.getCunning() + ", Решительность: "
-                    + slytherin.getDetermination() + ", Амбициозность: " + slytherin.getAmbition()
-                    + ", Находчивость: " + slytherin.getResourcefulness()
-                    + ", Жажда власти: " + slytherin.getLustForPower());
+    public void compareSlytherin(Slytherin first, Slytherin second) {
+        int firstSum = first.getAmbition() + first.getCunning() + first.getResourcefulness()
+                + first.getDetermination() + first.getLustForPower();
+        int secondSum = second.getAmbition() + second.getCunning() + second.getResourcefulness()
+                + second.getDetermination() + second.getLustForPower();
+
+        if (firstSum > secondSum) {
+            System.out.println(first.getStudent() + " лучший Слизеринец, чем " + second.getStudent());
+        } else if (secondSum > firstSum) {
+            System.out.println(second.getStudent() + " лучший Слизеринец, чем " + first.getStudent());
+        } else {
+            System.out.println(second.getStudent() + " равен " + first.getStudent());
+        }
+    }
+
+    public void compareAllHogwarts(Hogwarts first, Hogwarts second) {
+        if (first.getMagicPower() > second.getMagicPower()) {
+            System.out.println(first.getStudent() + " обладает большей мощностью магии, чем " + second.getStudent());
+        } else if (second.getMagicPower() > first.getMagicPower()) {
+            System.out.println(second.getStudent() + " обладает большей мощностью магии, чем " + first.getStudent());
+        } else {
+            System.out.println(second.getStudent() + " равен по мощности магии с " + first.getStudent());
+        }
+
+        if (first.getTransgressionDistance() > second.getTransgressionDistance()) {
+            System.out.println(first.getStudent() + " обладает большим расстоянием трансгрессии, чем "
+                    + second.getStudent());
+        } else if (second.getTransgressionDistance() > first.getTransgressionDistance()) {
+            System.out.println(second.getStudent() + " обладает большим расстоянием трансгрессии, чем "
+                    + first.getStudent());
+        } else {
+            System.out.println(second.getStudent() + " равен по расстоянию трансгрессии с " + first.getStudent());
         }
     }
 }
